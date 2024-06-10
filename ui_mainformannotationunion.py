@@ -26,9 +26,9 @@ class Ui_MainFormAnnotationUnion(object):
         self.verticalLayout.addWidget(self.textBrowser)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.pushButton = QtWidgets.QPushButton(MainFormAnnotationUnion)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout.addWidget(self.pushButton)
+        self.btn_select_base = QtWidgets.QPushButton(MainFormAnnotationUnion)
+        self.btn_select_base.setObjectName("btn_select_base")
+        self.horizontalLayout.addWidget(self.btn_select_base)
         self.label_selected = QtWidgets.QLabel(MainFormAnnotationUnion)
         self.label_selected.setObjectName("label_selected")
         self.horizontalLayout.addWidget(self.label_selected)
@@ -60,7 +60,7 @@ class Ui_MainFormAnnotationUnion(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">3. Select an annotation, then click &quot;OK&quot; to union.</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">4. Repeat step 3 for all annotations to union.</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">5. When all objects are unioned, click &quot;Cancel.&quot;</p></body></html>"))
-        self.pushButton.setText(_translate("MainFormAnnotationUnion", "Select Annotation"))
+        self.btn_select_base.setText(_translate("MainFormAnnotationUnion", "Select Annotation"))
         self.label_selected.setText(_translate("MainFormAnnotationUnion", "Not Selected"))
         self.btn_start.setText(_translate("MainFormAnnotationUnion", "Start Annotation Union"))
 

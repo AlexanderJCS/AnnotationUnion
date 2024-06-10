@@ -53,12 +53,13 @@ class MainFormAnnotationUnion(OrsAbstractWindow):
             return
 
         self.selected_annotation = annotation
-        self.ui.label_selected.setText(annotation.getName())
+        self.ui.label_selected.setText(f"Selected: {annotation.getTitle()}")
 
     @pyqtSlot()
     def on_btn_start_clicked(self):
         if self.selected_annotation is None:
             self.ui.label_status.setText("No annotation selected")
+            return
 
         annotations = []
 
@@ -66,10 +67,8 @@ class MainFormAnnotationUnion(OrsAbstractWindow):
             annotation = self.annotation_dialog()
             if annotation is None:
                 break
-            annotations.append(annotation)
 
-        if len(annotations) == 0:
-            return
+            annotations.append(annotation)
 
         for annotation in annotations:
             count = annotation.getControlPointCount(0)
