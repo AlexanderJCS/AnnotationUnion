@@ -23,6 +23,8 @@ class MainFormAnnotationUnion(OrsAbstractWindow):
         self.ui.setupUi(self)
         WorkingContext.registerOrsWidget('AnnotationUnion_924df9cb243f11efad78f83441a96bd5', implementation, 'MainFormAnnotationUnion', self)
 
+        self.selected_annotation: Optional[ORSModel.Annotation, None] = None
+
     @staticmethod
     def annotation_dialog() -> Optional[ORSModel.Annotation]:
         chooser = ChooseObjectAndNewName(
@@ -44,26 +46,39 @@ class MainFormAnnotationUnion(OrsAbstractWindow):
         return roi
 
     @pyqtSlot()
+    def on_btn_select_base_clicked(self):
+        annotation = self.annotation_dialog()
+        if annotation is None:
+            self.ui.label_selected.setText("Not Selected")
+            return
+
+        self.selected_annotation = annotation
+        self.ui.label_selected.setText(annotation.getName())
+
+    @pyqtSlot()
     def on_btn_start_clicked(self):
+        if self.selected_annotation is None:
+            self.ui.label_status.setText("No annotation selected")
+
         annotations = []
 
         while True:
-            roi = self.annotation_dialog()
-            if roi is None:
+            annotation = self.annotation_dialog()
+            if annotation is None:
                 break
-            annotations.append(roi)
+            annotations.append(annotation)
 
         if len(annotations) == 0:
             return
 
-        start_annotation = annotations[0]
-
-        for annotation in annotations[1:]:
+        for annotation in annotations:
             count = annotation.getControlPointCount(0)
 
             for i in range(count):
-                start_annotation.addControlPoint(
+                self.selected_annotation.addControlPoint(
                     annotation.getControlPointPositionAtIndex(i, 0, None),
                     0,
                     None
                 )
+
+        self.ui.label_status.setText(f"Unioned {len(annotations)} annotations")
