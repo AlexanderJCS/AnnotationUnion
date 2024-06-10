@@ -31,7 +31,7 @@ class AnnotationUnion_924df9cb243f11efad78f83441a96bd5(OrsPlugin):
     # UIs
     UIDescriptors = [UIDescriptor(name='MainFormAnnotationUnion',
                                   title='Annotation Union',
-                                  dock='Left',
+                                  dock='Floating',
                                   tab='Main',
                                   modal=False,
                                   collapsible=True,
