@@ -28,7 +28,7 @@ A plugin to combine annotations in the Dragonfly Open3D World software. Made for
 
 To use the plugin:
 1. Open Dragonfly and your session
-2. On the top bar, click Annotation Union -> Start Annotation Union
+2. On the top bar, click Plugins -> Start Annotation Union
 3. Select an annotation to append other annotations to (this annotation will be modified). Do not enter anything under the "Name" field
 4. Select "Start Annotation Union".
 5. Select annotations to append. Click "OK" to append the annotation.

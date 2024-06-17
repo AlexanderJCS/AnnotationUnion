@@ -29,8 +29,8 @@ class AnnotationUnion_924df9cb243f11efad78f83441a96bd5(OrsPlugin):
     canBeGenericallyOpened = False
 
     # UIs
-    UIDescriptors = [UIDescriptor(name='MainFormAnnotationUnion',
-                                  title='Annotation Union',
+    UIDescriptors = [UIDescriptor(name='MainFormPlugins',
+                                  title='Plugins',
                                   dock='Floating',
                                   tab='Main',
                                   modal=False,
@@ -42,7 +42,7 @@ class AnnotationUnion_924df9cb243f11efad78f83441a96bd5(OrsPlugin):
 
     @classmethod
     def getMainFormName(cls):
-        return 'MainFormAnnotationUnion'
+        return 'MainFormPlugins'
 
     @classmethod
     def getMainFormClass(cls):
@@ -54,10 +54,10 @@ class AnnotationUnion_924df9cb243f11efad78f83441a96bd5(OrsPlugin):
         instance = AnnotationUnion_924df9cb243f11efad78f83441a96bd5()
 
         if instance is not None:
-            instance.openWidget("MainFormAnnotationUnion")
+            instance.openWidget("MainFormPlugins")
 
     @classmethod
-    @menuItem("Annotation Union")
+    @menuItem("Plugins")
     def AnnotationUnion(cls):
         menu_item = Menu(title="Start Annotation Union",
                          id_="AnnotationUnion_924df9cb243f11efad78f83441a96bd5_1",
