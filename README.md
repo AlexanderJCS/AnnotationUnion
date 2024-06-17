@@ -4,7 +4,7 @@ A plugin to combine annotations in the Dragonfly Open3D World software. Made for
 
 ## Automatic Installation (Windows)
 
-1. Ensure Python 3.5 or later is installed from [python.org](https://www.python.org). (Disclaimer: the installer was tested with Python 3.11 and 3.12. Other versions should work, but are not guaranteed to work).
+1. Ensure Python 3.5 or later is installed from [python.org](https://www.python.org). (Disclaimer: the installer was tested with Python 3.11 and 3.12. Other versions should work, but are not guaranteed to work. Python 2 may work).
 2. On this webpage, click Code -> Download ZIP
 3. Go to your downloads folder and extract the zip file
 4. Within the extracted file, run `_install.py` (you may need to right-click -> open with -> Python)

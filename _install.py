@@ -9,6 +9,12 @@ PLUGIN_NAME = "AnnotationUnion_924df9cb243f11efad78f83441a96bd5"
 
 
 def main():
+    # Python 2 compatibility
+    try:
+        input = raw_input
+    except NameError:
+        pass
+
     # If the OS is not Windows
     if os.name != "nt":
         print("This script is only for Windows. Please install manually")
@@ -32,7 +38,7 @@ def main():
     if install_all_users_bool:
         base_path = "C:/ProgramData/ORS/"
     else:
-        base_path = f"C:/Users/{os.getlogin()}/AppData/Local/ORS/"
+        base_path = "C:/Users/{}/AppData/Local/ORS/".format(os.getlogin())
 
     # Version path
     versions = os.listdir(base_path)
@@ -47,7 +53,7 @@ def main():
 
     print("\nSelect the Dragonfly version:")
     for i, version in enumerate(versions, 1):
-        print(f"{i}. {version}")
+        print("{}. {}".format(i, version))
 
     version_index = -1
     while version_index < 1 or version_index > len(versions):
