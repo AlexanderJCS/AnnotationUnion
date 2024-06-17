@@ -9,12 +9,6 @@ PLUGIN_NAME = "AnnotationUnion_924df9cb243f11efad78f83441a96bd5"
 
 
 def main():
-    # Python 2 compatibility
-    try:
-        input = raw_input
-    except NameError:
-        pass
-
     # If the OS is not Windows
     if os.name != "nt":
         print("This script is only for Windows. Please install manually")
