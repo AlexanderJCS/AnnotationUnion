@@ -61,6 +61,8 @@ class MainFormAnnotationUnion(OrsAbstractWindow):
             self.ui.label_status.setText("No annotation selected")
             return
 
+        self.selected_annotation: ORSModel.Annotation
+
         annotations = []
 
         while True:
@@ -78,6 +80,13 @@ class MainFormAnnotationUnion(OrsAbstractWindow):
                     annotation.getControlPointPositionAtIndex(i, 0, None),
                     0,
                     None
+                )
+
+                appended_ctrl_point_idx = self.selected_annotation.getControlPointCount(0) - 1
+                self.selected_annotation.setControlPointCaptionAtIndex(
+                    appended_ctrl_point_idx,
+                    0,
+                    annotation.getControlPointCaptionAtIndex(i, 0),
                 )
 
         self.ui.label_status.setText(f"Unioned {len(annotations)} annotations")
